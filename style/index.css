@@ -1,0 +1,9 @@
+div#pojemnik{width:900px;margin-left:auto;margin-right:auto;}
+div#naglowek{height:100px;background-color:#EEE}
+div#menu{width:200px;height:570px;float:left;background-color:#DDD}
+div#strona{float:right;width:700px;height:550px;background-color:#CCC;overflow-y:scroll;}
+div#stopka{float:right;width:700px;height:20px;background-color:#BBB;text-align:right;}
+ul{list-style:none;}
+p#uwaga{font-size:25px;color:red;}
+td{text-align:center;}
+p.center {text-align: center;}

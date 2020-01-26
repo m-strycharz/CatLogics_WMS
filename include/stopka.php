@@ -1,0 +1,1 @@
+Powered by CatLogics WMS &copy;<?php echo "2019 - ",date("Y");?>
