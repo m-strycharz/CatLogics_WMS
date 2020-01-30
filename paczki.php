@@ -38,14 +38,23 @@ function C(i) { return document.getElementsByClassName(i)                    }
 </div>
 <div id="strona">
 <center>
-<table border="1">
+    <table border ="1">
+        <tr><td>Przewoźnik</td><td>Ilość</td></tr>
+        <?php
+        $wylicz_kurierow = @mysqli_query($dbcnx, 'SELECT DISTINCT(przewoz) AS przewoznik, COUNT(przewoz) AS ilosc FROM paczki GROUP BY przewoz ORDER BY ilosc DESC');
+        while ($wynik_wylicz_kurierow = mysqli_fetch_array($wylicz_kurierow)){
+            echo '<tr><td>'.$wynik_wylicz_kurierow['przewoznik'].'</td><td>'.$wynik_wylicz_kurierow['ilosc'].'</td></tr>';
+        }
+        ?>
+    </table>
+<br>
+    <br>
+    <table border="1">
 <tr><td colspan="6">Historia przesyłek</td></tr>
 <tr><td>Lp</td><td>Data nadania</td><td>Przewoźnik</td><td>Numer listu</td><td>Odbiorca</td><td>Akcje</td></tr>
 <?php
 $a=1;
 $paczki = mysqli_query($dbcnx, 'SELECT * FROM paczki, przewoznik WHERE paczki.przewoz=przewoznik.nazwa ORDER BY data DESC');
-//$doreczyciel = mysqli_query($dbcnx, "SELECT * FROM paczki, przewoznik WHERE paczki.przewoz=przewoznik.nazwa AND paczki.id='paczki.ID'");
-//$link_wynik = mysqli_fetch_array($doreczyciel);
 while($paczki_wynik = mysqli_fetch_array($paczki)){
 	echo '<tr><td>'.$paczki_wynik['ID'].'</td><td>'.$paczki_wynik['data'].'</td><td>'.$paczki_wynik['przewoz'].'</td><td>'.$paczki_wynik['list'].'</td><td>'.$paczki_wynik['odbiorca'].'</td><td><a href="ed_paczki.php?ID='.$paczki_wynik['ID'].'"><img src="grafika/kolo.png"/></a><a href="'.$paczki_wynik['link'].''.$paczki_wynik['list'].'" target="_blanck"><img src="grafika/lupa.png"/></a><img src="grafika/iks.png"/></td></tr>';
 }
