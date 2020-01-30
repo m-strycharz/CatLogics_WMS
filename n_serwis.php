@@ -24,9 +24,10 @@ function C(i) { return document.getElementsByClassName(i)                    }
 	</ul>-->
 <li><a href="serwisy.php"><h3>Serwis</h3></a></li><!-- link do okna z historią serisów-->
 	<ul>
-	<li><a href="serwis.php">Nowy serwis</a></li>
-	<li><a href="czesci.php">Stan części</a></li>
-	<li><a href="lista_czesci.php">Dostawa części</a></li>
+	    <li><a href="serwis.php">Nowy serwis</a></li>
+	    <li><a href="czesci.php">Stan części</a></li>
+    	<li><a href="lista_czesci.php">Dostawa części</a></li>
+        <li><a href="lista_dostaw_czesci.php">Historia dostaw części</a></li>
 	</ul>
 <li><a href="paczki.php"><h3>Paczki</h3></a></li><!-- link do okna z historią paczek
 	<ul>
